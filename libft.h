@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mpaju <mpaju@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:58:24 by mpaju             #+#    #+#             */
-/*   Updated: 2016/11/16 19:13:18 by mpaju            ###   ########.fr       */
+/*   Updated: 2017/09/04 09:49:41 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
 void				ft_lstadd(t_list **alst, t_list *newlst);
+int					ft_lstaddlast(t_list **alst, t_list *newlist);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -47,6 +48,7 @@ int					ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 void				ft_memdel(void **ap);
 void				*ft_memmove(void *dest, const void *src, size_t num);
 void				*ft_memset(void *str, int c, size_t n);
+void				ft_print_chars(char chr, int count);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);

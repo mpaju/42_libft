@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_print_chars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 05:44:29 by mpaju             #+#    #+#             */
-/*   Updated: 2017/09/04 09:14:25 by mpaju            ###   ########.fr       */
+/*   Created: 2017/09/03 14:41:37 by mpaju             #+#    #+#             */
+/*   Updated: 2017/09/03 14:41:41 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_print_chars(char chr, int count)
 {
-	if (!n)
-		return (1);
-	if (!s1 || !s2)
-		return (0);
-	return (!ft_strncmp(s1, s2, n));
+	if (!chr || count <= 0)
+		return ;
+	while (count--)
+		ft_putchar(chr);
 }

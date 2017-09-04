@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddlast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 05:44:29 by mpaju             #+#    #+#             */
-/*   Updated: 2017/09/04 09:14:25 by mpaju            ###   ########.fr       */
+/*   Created: 2017/07/24 14:11:11 by mpaju             #+#    #+#             */
+/*   Updated: 2017/09/03 14:29:46 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+int	ft_lstaddlast(t_list **alst, t_list *newlist)
 {
-	if (!n)
-		return (1);
-	if (!s1 || !s2)
+	if (!alst && !newlist)
 		return (0);
-	return (!ft_strncmp(s1, s2, n));
+	while ((*alst)->next != NULL)
+		*alst = (*alst)->next;
+	newlist->next = NULL;
+	(*alst)->next = newlist;
+	return (1);
 }
