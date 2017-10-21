@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 05:33:36 by mpaju             #+#    #+#             */
-/*   Updated: 2016/11/23 17:48:36 by mpaju            ###   ########.fr       */
+/*   Created: 2017/10/20 18:58:28 by mpaju             #+#    #+#             */
+/*   Updated: 2017/10/20 18:58:31 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+size_t	ft_strclen(char *str, char c)
 {
-	if (as)
-	{
-		free(*as);
-		*as = 0;
-	}
+	size_t	len;
+
+	len = 0;
+	if (!*str || !str)
+		return (len);
+	while (str[len] != c && str[len])
+		len++;
+	return (len);
 }

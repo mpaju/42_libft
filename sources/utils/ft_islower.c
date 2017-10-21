@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 05:39:04 by mpaju             #+#    #+#             */
-/*   Updated: 2016/11/16 19:00:03 by mpaju            ###   ########.fr       */
+/*   Created: 2017/10/20 18:59:21 by mpaju             #+#    #+#             */
+/*   Updated: 2017/10/20 18:59:22 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(char *str, int c)
-{
-	char	ch;
-	char	*ret;
+#include "libft.h"
 
-	ch = (char)c;
-	ret = 0;
-	while (*str || *str == ch)
-	{
-		if (*str == ch)
-		{
-			ret = str;
-			if (!ch)
-				return (ret);
-		}
-		str++;
-	}
-	return (ret);
+int	ft_islower(char c)
+{
+	if (c > 96 && c < 123)
+		return (1);
+	return (0);
 }

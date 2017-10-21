@@ -48,7 +48,7 @@ static void	count_letters_and_all_mem(char const *s, char x, char **ret)
 		s++;
 		if (*s == x || !*s)
 		{
-			if ((ret[c] = (char *)malloc(sizeof(char) * (lc + 1))))
+			if ((ret[c] = (char *)ft_memalloc(sizeof(char) * (lc + 1))))
 			{
 				ft_bzero(ret[c], lc + 1);
 				c++;
@@ -91,7 +91,7 @@ char		**ft_strsplit(char const *s, char x)
 	while (*s == x)
 		s++;
 	lc = count_words(s, x);
-	if (!(ret = (char **)malloc(sizeof(char*) * (lc + 1))))
+	if (!(ret = (char **)ft_memalloc(sizeof(char*) * (lc + 1))))
 		return (0);
 	ret[lc] = 0;
 	count_letters_and_all_mem(s, x, ret);

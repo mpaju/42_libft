@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaju <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/07 03:44:52 by mpaju             #+#    #+#             */
-/*   Updated: 2016/11/25 15:07:40 by mpaju            ###   ########.fr       */
+/*   Created: 2016/09/06 05:36:08 by mpaju             #+#    #+#             */
+/*   Updated: 2016/11/13 05:35:39 by mpaju            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-char	*ft_strdup(char *src)
+int	ft_strlen(const char *str)
 {
-	char	*mlc;
-	char	*tmp;
-	int		count;
+	int count;
 
-	tmp = src;
 	count = 0;
-	while (*(src++) != '\0')
-		count++;
-	if (!(mlc = (char *)ft_memalloc(count + 1)))
+	if (!str)
 		return (0);
-	src = tmp;
-	tmp = mlc;
-	while (*src != '\0')
-	{
-		*mlc = *src;
-		src++;
-		mlc++;
-	}
-	*mlc = 0;
-	return (tmp);
+	while (*str++ != '\0')
+		count++;
+	return (count);
 }
